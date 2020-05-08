@@ -1,0 +1,139 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- 配置Spring的监听器 --> 
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- 配置加载类路径的配置文件 --> 
+  <context-param>
+    <param-name>contextConfigLocation</param-name> 
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+
+
+  <!--配置前端控制器-->
+  <servlet>
+  <servlet-name>dispatcherServlet</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <init-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:springmvc.xml</param-value>
+  </init-param>
+  <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>dispatcherServlet</servlet-name>
+<url-pattern>/</url-pattern>
+</servlet-mapping>
+
+        <!-- 配置解决中文乱码的过滤器-->
+<filter>
+<filter-name>characterEncodingFilter</filter-name>
+<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+<init-param>
+  <param-name>encoding</param-name>
+  <param-value>UTF-8</param-value>
+</init-param>
+</filter>
+<filter-mapping>
+<filter-name>characterEncodingFilter</filter-name>
+<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>notice</servlet-name>
+    <jsp-file>/WEB-INF/pages/notice.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>notice</servlet-name>
+    <url-pattern>/notice</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>clock_in</servlet-name>
+    <jsp-file>/WEB-INF/pages/clock_in.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>clock_in</servlet-name>
+    <url-pattern>/clock_in</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>integral_award</servlet-name>
+    <jsp-file>/WEB-INF/pages/integral_award.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>integral_award</servlet-name>
+    <url-pattern>/integral_award</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>points</servlet-name>
+    <jsp-file>/WEB-INF/pages/points.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>points</servlet-name>
+    <url-pattern>/points</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ranking</servlet-name>
+    <jsp-file>/WEB-INF/pages/ranking.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ranking</servlet-name>
+    <url-pattern>/ranking</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>shopping</servlet-name>
+    <jsp-file>/WEB-INF/pages/shopping.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>shopping</servlet-name>
+    <url-pattern>/shopping</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>task</servlet-name>
+    <jsp-file>/WEB-INF/pages/task.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>task</servlet-name>
+    <url-pattern>/task</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>login</servlet-name>
+    <jsp-file>/WEB-INF/pages/login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>mydata</servlet-name>
+    <jsp-file>/WEB-INF/pages/mydata.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mydata</servlet-name>
+    <url-pattern>/mydata</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>admin_login</servlet-name>
+    <jsp-file>/WEB-INF/pages/admin_login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>admin_login</servlet-name>
+    <url-pattern>/admin_login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>admin_home</servlet-name>
+    <jsp-file>/WEB-INF/pages/admin_home.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>admin_home</servlet-name>
+    <url-pattern>/admin_home</url-pattern>
+  </servlet-mapping>
+</web-app>
